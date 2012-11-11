@@ -35,7 +35,7 @@ class Huffman(object):
                 self.fbyc[c] = 1
 
     def make_tree(self):
-        """Creates huffman binary tree from pairs in cf."""
+        """Creates huffman binary tree from pairs in self.fbyc."""
 
         # create priority queue of (freq, char) pairs
         pq = [(v, k) for k, v in list(self.fbyc.items())]
@@ -51,7 +51,7 @@ class Huffman(object):
         self.tree = pq[0]
 
     def print_codes(self, tree=None, pfx=''):
-        """Traverses tree and prints binary representation of all chars."""
+        """Traverses tree and prints binary representation of all symbols."""
         if tree is None: # ugly
             tree=self.tree
 
